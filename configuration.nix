@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ./xorg-config.nix ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
