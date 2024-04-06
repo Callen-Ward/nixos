@@ -16,6 +16,8 @@
     extraGroups = [ "wheel" ];
   };
 
+  users.defaultUserShell = pkgs.zsh;
+
   environment.systemPackages = with pkgs; [
     fzf
     git
@@ -27,6 +29,10 @@
     yadm
     zsh
   ];
+
+  programs.zsh.enable = true;
+
+  programs.neovim.defaultEditor = true;
 
   system.stateVersion = "23.11";
 }
