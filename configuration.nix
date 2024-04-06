@@ -17,8 +17,15 @@
   };
 
   environment.systemPackages = with pkgs; [
-      neovim
-      git
+    fzf
+    git
+    htop
+    neovim
+    p7zip
+    ripgrep
+    tldr
+    yadm
+    zsh
   ];
 
   system.stateVersion = "23.11";
