@@ -41,6 +41,9 @@
     networkmanagerapplet    
     pcmanfm
     picom
+
+    cmatrix
+    pfetch
   ];
 
   programs.zsh.enable = true;
