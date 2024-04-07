@@ -32,6 +32,15 @@
     gcc
     nodejs
     rustup
+
+    dmenu
+    flameshot
+    kitty
+    librewolf
+    mpv
+    networkmanagerapplet    
+    pcmanfm
+    picom
   ];
 
   programs.zsh.enable = true;
