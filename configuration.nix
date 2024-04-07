@@ -29,9 +29,9 @@
     yadm
     zsh
 
+    gcc
+    nodejs
     rustup
-    libgcc
-    nodejs_20
   ];
 
   programs.zsh.enable = true;
