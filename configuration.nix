@@ -18,6 +18,7 @@
 
   users.defaultUserShell = pkgs.zsh;
 
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     fzf
     git
@@ -49,6 +50,15 @@
   programs.zsh.enable = true;
 
   programs.neovim.defaultEditor = true;
+
+  security.rtkit.enable = true;
+    services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+};
 
   system.stateVersion = "23.11";
 }
