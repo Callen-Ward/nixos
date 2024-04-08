@@ -48,6 +48,10 @@
     pfetch
   ];
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
+
   programs.zsh.enable = true;
 
   programs.neovim.defaultEditor = true;
