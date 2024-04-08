@@ -29,6 +29,7 @@
     tldr
     yadm
     zsh
+    xclip
 
     gcc
     nodejs
