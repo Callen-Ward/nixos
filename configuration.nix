@@ -8,6 +8,7 @@
 
   networking.hostName = "nix";
   networking.networkmanager.enable = true;
+  networking.nameservers = [ "1.1.1.1" ];
 
   time.timeZone = "Europe/London";
 
