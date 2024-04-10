@@ -1,7 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ./xorg-config.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ./xorg-config.nix
+    ./home-manager-config.nix
+  ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
@@ -11,13 +15,6 @@
   networking.nameservers = [ "1.1.1.1" ];
 
   time.timeZone = "Europe/London";
-
-  users.users.ca1 = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
-
-  users.defaultUserShell = pkgs.zsh;
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
