@@ -64,6 +64,10 @@
         "privacy.resistFingerprinting.letterboxing" = false;
         "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = false;
         "webgl.disabled" = false;
+
+        ## other about:config
+        # disable user agent being set to windows 10
+        "general.useragent.compatMode.firefox" = true;
       };
     };
 
