@@ -36,7 +36,6 @@
     dmenu
     flameshot
     kitty
-    librewolf
     mpv
     networkmanagerapplet    
     pcmanfm
