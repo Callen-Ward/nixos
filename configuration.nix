@@ -49,8 +49,19 @@
     nixfmt
   ];
 
-  fonts.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "FiraCode" ]; }) ];
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    noto-fonts
+  ];
+
+  fonts.fontconfig = {
+    defaultFonts = {
+      serif = [ "Noto Serif" ];
+      sansSerif = [ "Noto Sans" ];
+      monospace = [ "Noto Monospace" ];
+      emoji = [ "Noto Color Emoji" ];
+    };
+  };
 
   security.rtkit.enable = true;
   services.pipewire = {
