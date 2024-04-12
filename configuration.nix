@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
@@ -7,7 +7,8 @@
     ./hardware-configuration.nix
     ./xorg-config.nix
     ./users/users.nix
-  ];
+  ] ++ lib.optional (builtins.pathExists ./local/configuration.nix)
+    ./local/configuration.nix;
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
@@ -31,10 +32,6 @@
     zsh
     xclip
 
-    gcc
-    nodejs
-    rustup
-
     dmenu
     flameshot
     kitty
@@ -45,8 +42,6 @@
 
     cmatrix
     pfetch
-
-    nixfmt
   ];
 
   fonts.packages = with pkgs; [
