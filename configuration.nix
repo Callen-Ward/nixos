@@ -42,6 +42,8 @@
 
     cmatrix
     pfetch
+
+    gtk-engine-murrine
   ];
 
   fonts.packages = with pkgs; [
