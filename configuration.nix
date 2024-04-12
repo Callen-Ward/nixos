@@ -37,17 +37,18 @@
     flameshot
     kitty
     mpv
-    networkmanagerapplet    
+    networkmanagerapplet
     pcmanfm
     picom
 
     cmatrix
     pfetch
+
+    nixfmt
   ];
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
-  ];
+  fonts.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "FiraCode" ]; }) ];
 
   programs.dconf.enable = true;
   programs.zsh.enable = true;
@@ -55,13 +56,13 @@
   programs.neovim.defaultEditor = true;
 
   security.rtkit.enable = true;
-    services.pipewire = {
+  services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-};
+  };
 
   system.stateVersion = "23.11";
 }
