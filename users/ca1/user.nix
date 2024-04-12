@@ -6,7 +6,9 @@
     extraGroups = [ "wheel" ];
   };
 
-  # I couldn't get qt.style.name = "gtk2" to work in home manager
-  qt.enable = true;
-  qt.style = "gtk2";
+  qt = {
+    enable = true;
+    style = "gtk2";
+    platformTheme = "gtk2";
+  };
 }
