@@ -1,6 +1,6 @@
 {
   home-manager.users.ca1 = { pkgs, config, ... }: {
-    imports = [ ./gtk.nix ./librewolf.nix ./qt.nix ];
+    imports = [ ./modules/gtk.nix ./modules/librewolf.nix ./modules/qt.nix ];
 
     nixpkgs.config = {
       allowUnfree = true;
