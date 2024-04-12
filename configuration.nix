@@ -2,9 +2,11 @@
 
 {
   imports = [
+    <home-manager/nixos>
+
     ./hardware-configuration.nix
     ./xorg-config.nix
-    ./home-manager-config.nix
+    ./users/ca1/user.nix
   ];
 
   boot.loader.grub.enable = true;
