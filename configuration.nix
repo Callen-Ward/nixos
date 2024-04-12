@@ -6,7 +6,7 @@
 
     ./hardware-configuration.nix
     ./xorg-config.nix
-    ./users/ca1/user.nix
+    ./users/users.nix
   ];
 
   boot.loader.grub.enable = true;
@@ -51,11 +51,6 @@
 
   fonts.packages = with pkgs;
     [ (nerdfonts.override { fonts = [ "FiraCode" ]; }) ];
-
-  programs.dconf.enable = true;
-  programs.zsh.enable = true;
-
-  programs.neovim.defaultEditor = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
