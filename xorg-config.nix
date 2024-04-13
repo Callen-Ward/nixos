@@ -5,9 +5,15 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd startx ${
-            pkgs.writeText ".xinitrc" "exec awesome"
-          }";
+        command = builtins.concatStringsSep " " [
+          "${pkgs.greetd.tuigreet}/bin/tuigreet"
+          "--cmd startx ${pkgs.writeText ".xinitrc" "exec awesome"}"
+          "--time"
+          "--time-format '%a %d/%m %H:%M'"
+          "--remember"
+          "--asterisks"
+          "--window-padding 1"
+        ];
       };
     };
   };
