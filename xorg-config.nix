@@ -1,18 +1,22 @@
 { pkgs, ... }:
 
 {
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd startx ${
+            pkgs.writeText ".xinitrc" "exec awesome"
+          }";
+      };
+    };
+  };
+
   services.xserver = {
     enable = true;
 
-    displayManager = {
-      sddm.enable = true;
-      defaultSession = "none+awesome";
-    };
-
-    windowManager.awesome = {
-      enable = true;
-      luaModules = with pkgs.luaPackages; [ luarocks luadbi-mysql ];
-    };
+    displayManager.startx.enable = true;
+    windowManager.awesome.enable = true;
   };
 
   hardware.opengl.driSupport32Bit = true;
