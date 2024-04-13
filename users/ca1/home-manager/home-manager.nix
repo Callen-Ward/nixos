@@ -1,5 +1,5 @@
 {
-  home-manager.users.ca1 = { pkgs, config, ... }: {
+  home-manager.users.ca1 = { config, pkgs, ... }: {
     imports = [
       ./theme.nix
       ./themes/tokyonight.nix
