@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ config, pkgs, ... }:
 
 {
   home.file."./.librewolf".source =
@@ -55,7 +55,7 @@
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           darkreader
           tampermonkey
-          tokyo-night-v2
+          config.theme.librewolfTheme
         ];
 
         settings = {

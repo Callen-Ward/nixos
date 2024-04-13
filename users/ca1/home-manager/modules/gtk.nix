@@ -1,12 +1,12 @@
-{ pkgs, ... }:
+{ config, ... }:
 
 {
   gtk = {
     enable = true;
     theme = {
-      name = "Tokyonight-Dark-BL";
-      package = pkgs.tokyo-night-gtk;
+      name = config.theme.gtkTheme.name;
+      package = config.theme.gtkTheme.pkg;
     };
-    iconTheme = { name = "Tokyonight-Dark"; };
+    iconTheme = { name = config.theme.gtkTheme.iconThemeName; };
   };
 }

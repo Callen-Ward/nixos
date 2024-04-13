@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ config, ... }:
 
 {
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    name = "Adwaita";
+    name = config.theme.cursor.name;
     size = 24;
-    package = pkgs.gnome.adwaita-icon-theme;
+    package = config.theme.cursor.pkg;
   };
 }

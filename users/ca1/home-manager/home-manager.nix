@@ -1,7 +1,13 @@
 {
   home-manager.users.ca1 = { pkgs, config, ... }: {
-    imports =
-      [ ./modules/gtk.nix ./modules/librewolf.nix ./modules/cursor.nix ];
+    imports = [
+      ./theme.nix
+      ./themes/tokyonight.nix
+
+      ./modules/gtk.nix
+      ./modules/librewolf.nix
+      ./modules/cursor.nix
+    ];
 
     nixpkgs.config = {
       allowUnfree = true;
