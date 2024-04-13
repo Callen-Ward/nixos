@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   theme = {
@@ -46,5 +46,25 @@
     };
 
     librewolfTheme = pkgs.nur.repos.rycee.firefox-addons.tokyo-night-v2;
+
+    fzfColors = with config.theme.colors; {
+      fg = fg;
+      bg = bg;
+      preview-fg = fg;
+      preview-bg = bg;
+      hl = blue1;
+      "fg+" = fg;
+      "bg+" = bg_highlight;
+      gutter = bg;
+      "hl+" = blue1;
+      info = comment;
+      border = blue1;
+      prompt = magenta;
+      pointer = blue1;
+      marker = magenta;
+      spinner = blue1;
+      header = blue1;
+    };
+
   };
 }

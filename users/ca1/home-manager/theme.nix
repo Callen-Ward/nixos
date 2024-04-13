@@ -27,6 +27,8 @@
           };
 
           librewolfTheme = lib.mkOption { type = package; };
+
+          fzfColors = lib.mkOption { type = attrsOf str; };
         };
       };
   };

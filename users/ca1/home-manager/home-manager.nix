@@ -7,6 +7,7 @@
       ./modules/gtk.nix
       ./modules/librewolf.nix
       ./modules/cursor.nix
+      ./modules/fzf.nix
     ];
 
     nixpkgs.config = {
