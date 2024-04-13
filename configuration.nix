@@ -10,9 +10,6 @@
   ] ++ lib.optional (builtins.pathExists ./local/configuration.nix)
     ./local/configuration.nix;
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-
   networking.hostName = "nix";
   networking.networkmanager.enable = true;
   networking.nameservers = [ "1.1.1.1" ];
