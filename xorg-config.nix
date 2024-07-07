@@ -23,20 +23,19 @@
 
     displayManager.startx.enable = true;
     windowManager.awesome.enable = true;
+  };
 
-    libinput = {
+  services.libinput = {
       enable = true;
 
       mouse = {
         accelProfile = "flat";
       };
     };
-  };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 }
 

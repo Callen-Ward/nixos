@@ -42,7 +42,7 @@
 
     cursor = {
       name = "Adwaita";
-      pkg = pkgs.gnome.adwaita-icon-theme;
+      pkg = pkgs.adwaita-icon-theme;
     };
 
     librewolfTheme = pkgs.nur.repos.rycee.firefox-addons.tokyo-night-v2;
