@@ -46,12 +46,15 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     noto-fonts
+    noto-fonts-lgc-plus
+    noto-fonts-cjk-sans
+    inter
   ];
 
   fonts.fontconfig = {
     defaultFonts = {
       serif = [ "Noto Serif" ];
-      sansSerif = [ "Noto Sans" ];
+      sansSerif = [ "Inter" ];
       monospace = [ "Noto Monospace" ];
       emoji = [ "Noto Color Emoji" ];
     };
