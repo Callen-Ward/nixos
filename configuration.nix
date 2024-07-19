@@ -65,6 +65,8 @@
     jack.enable = true;
   };
 
+  programs.nix-ld.enable = true;
+
   system.stateVersion = "23.11";
 }
 
