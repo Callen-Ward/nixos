@@ -5,7 +5,7 @@
     <home-manager/nixos>
 
     ./hardware-configuration.nix
-    ./xorg-config.nix
+    ./gui-config.nix
     ./users/users.nix
   ] ++ lib.optional (builtins.pathExists ./local/configuration.nix)
     ./local/configuration.nix;
@@ -27,15 +27,6 @@
     tldr
     yadm
     zsh
-    xclip
-
-    dmenu
-    flameshot
-    kitty
-    mpv
-    networkmanagerapplet
-    pcmanfm
-    picom
 
     cmatrix
     pfetch
