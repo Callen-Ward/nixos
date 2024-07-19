@@ -10,12 +10,6 @@
   ] ++ lib.optional (builtins.pathExists ./local/configuration.nix)
     ./local/configuration.nix;
 
-  networking.hostName = "nix";
-  networking.networkmanager.enable = true;
-  networking.nameservers = [ "1.1.1.1" ];
-
-  time.timeZone = "Europe/London";
-
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     fzf
@@ -56,7 +50,14 @@
     };
   };
 
+  networking = {
+    hostName = "nix";
+    networkmanager.enable = true;
+    nameservers = [ "1.1.1.1" ];
+  };
+
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -64,6 +65,8 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  time.timeZone = "Europe/London";
 
   programs.nix-ld.enable = true;
 
