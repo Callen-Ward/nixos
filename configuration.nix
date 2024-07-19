@@ -28,6 +28,11 @@
     yadm
     zsh
 
+    kitty
+    mpv
+    networkmanagerapplet
+    pcmanfm
+
     cmatrix
     pfetch
 
