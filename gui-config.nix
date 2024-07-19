@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./wayland-config.nix
     ./xorg-config.nix
   ];
 
@@ -11,7 +12,7 @@
       default_session = {
         command = builtins.concatStringsSep " " [
           "${pkgs.greetd.tuigreet}/bin/tuigreet"
-          "--cmd startx"
+          "--cmd hyprland"
           "--time"
           "--time-format '%a %d/%m %H:%M'"
           "--remember"
