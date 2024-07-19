@@ -35,8 +35,8 @@
     };
 
     gtkTheme = {
-      name = "Tokyonight-Dark-BL";
-      pkg = pkgs.tokyo-night-gtk;
+      name = "Tokyonight-Dark";
+      pkg = pkgs.tokyonight-gtk-theme;
       iconThemeName = "Tokyonight-Dark";
     };
 
