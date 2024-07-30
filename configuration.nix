@@ -69,7 +69,5 @@
   time.timeZone = "Europe/London";
 
   programs.nix-ld.enable = true;
-
-  system.stateVersion = "23.11";
 }
 
