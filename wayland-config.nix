@@ -2,17 +2,15 @@
 
 {
   environment.systemPackages = with pkgs; [
-    dunst
-    eww
+    ags
+    bun
     grimblast
     hyprlock
     hyprpaper
     hyprpicker
+    sassc
     tofi
     wl-clipboard
-
-    # required by eww config
-    (lua.withPackages (ps: with ps; [ luaposix ]))
   ];
 
   programs.hyprland = {
