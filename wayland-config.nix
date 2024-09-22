@@ -13,6 +13,15 @@
     wl-clipboard
   ];
 
+  nixpkgs.overlays = [
+    (final: prev:
+      {
+        ags = prev.ags.overrideAttrs (old: {
+          buildInputs = old.buildInputs ++ [ pkgs.libdbusmenu-gtk3 ];
+        });
+      })
+  ];
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
