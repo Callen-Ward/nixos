@@ -1,18 +1,13 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./wayland-config.nix
-    ./xorg-config.nix
-  ];
-
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
         command = builtins.concatStringsSep " " [
           "${pkgs.greetd.tuigreet}/bin/tuigreet"
-          "--cmd hyprland"
+          "--cmd Hyprland"
           "--time"
           "--time-format '%a %d/%m %H:%M'"
           "--remember"
@@ -31,4 +26,3 @@
     };
   };
 }
-

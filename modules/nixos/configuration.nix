@@ -1,14 +1,12 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
-    <home-manager/nixos>
+    ./ca1.nix
+    ./hyprland.nix
+  ];
 
-    ./hardware-configuration.nix
-    ./gui-config.nix
-    ./users/users.nix
-  ] ++ lib.optional (builtins.pathExists ./local/configuration.nix)
-    ./local/configuration.nix;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -19,13 +17,15 @@
     p7zip
     ripgrep
     tldr
+    tmux
     yadm
     zsh
 
-    kitty
+    librewolf
     mpv
     networkmanagerapplet
     pcmanfm
+    wezterm
 
     cmatrix
     pfetch
@@ -33,13 +33,27 @@
     gtk-engine-murrine
   ];
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    noto-fonts
-    noto-fonts-lgc-plus
-    noto-fonts-cjk-sans
-    inter
-  ];
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+  programs.neovim.defaultEditor = true;
+  programs.dconf.enable = true;
+
+  qt = {
+    enable = true;
+    style = "gtk2";
+    platformTheme = "gtk2";
+  };
+
+  fonts.packages = with pkgs;
+    [
+      (nerdfonts.override {
+        fonts = [ "FiraCode" ];
+      })
+      noto-fonts
+      noto-fonts-lgc-plus
+      noto-fonts-cjk-sans
+      inter
+    ];
 
   fonts.fontconfig = {
     defaultFonts = {
@@ -51,7 +65,6 @@
   };
 
   networking = {
-    hostName = "nix";
     networkmanager.enable = true;
     nameservers = [ "1.1.1.1" ];
   };
@@ -66,8 +79,8 @@
     jack.enable = true;
   };
 
+  i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Europe/London";
 
   programs.nix-ld.enable = true;
 }
-

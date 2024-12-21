@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./theme.nix
+  ];
+
   theme = {
     colors = {
       bg_dark = "#16161e";
@@ -65,6 +69,5 @@
       spinner = blue1;
       header = blue1;
     };
-
   };
 }

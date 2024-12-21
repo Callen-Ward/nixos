@@ -1,17 +1,22 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    ags
-    bun
-    grimblast
-    hyprlock
-    hyprpaper
-    hyprpicker
-    sassc
-    tofi
-    wl-clipboard
+  imports = [
+    ./gui.nix
   ];
+
+  environment.systemPackages = with pkgs;
+    [
+      ags
+      bun
+      grimblast
+      hyprlock
+      hyprpaper
+      hyprpicker
+      sassc
+      tofi
+      wl-clipboard
+    ];
 
   nixpkgs.overlays = [
     (final: prev:
@@ -27,6 +32,5 @@
     xwayland.enable = true;
   };
 
-  # make electron apps run natively instead of under Xwayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
